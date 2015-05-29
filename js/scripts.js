@@ -1,14 +1,17 @@
-var returnWord = function(sentence, word) {
-  var originalWords = sentence.split(/ /);
+var returnedWord = function(sentence, word, newWord) {
+  var originalWord = sentence.split(/ /);
   var findWord = word
-  var foundWord = []
+  var replacementWord = newWord
+  var newSentence = []
 
-  originalWords.forEach(function(originalWord) {
-  if (originalWord === findWord){
-    foundWord.push(originalWord)
-  }
-});
-  return foundWord
+  for (var i = 0; i < originalWord.length; i++){
+    if (originalWord[i] != findWord){
+    newSentence.push(originalWord[i])
+    } else {
+    newSentence.push(replacementWord)
+    }
+  };
+  return newSentence.join(" ")
 };
 
 
@@ -29,4 +32,20 @@ $(document).ready(function() {
 //   var originalSentence = sentence;
 //   var newSentence = originalSentence.replace(word, newWord);
 //   return newSentence;
+// };
+
+// var returnedWord = function(sentence, word, newWord) {
+//   var originalWord = sentence.split(/ /);
+//   var findWord = word
+//   var replacementWord = newWord
+//   var newSentence = []
+//
+//   for (var i = 0; i < originalWord.length; i++){
+//     if (originalWord[i] != findWord){
+//     newSentence.push(originalWord[i])
+//     } else {
+//     newSentence.push(replacementWord)
+//     }
+//   };
+//   return newSentence.join(" ")
 // };

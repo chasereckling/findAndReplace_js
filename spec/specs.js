@@ -1,9 +1,5 @@
-describe('returnWord', function(){
+describe('returnedWord', function(){
   it('finds the word in a string and returns the found word', function(){
-  expect(returnWord("cat in the hat", "hat")).to.eql(["hat"]);
-});
-});
-
-describe('replaceWord', function(){
-  it('')
+  expect(returnedWord("the cat in the hat", "hat", "box")).to.eql("the cat in the box");
+  });
 });
