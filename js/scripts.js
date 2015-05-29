@@ -1,7 +1,6 @@
-var returnedWord = function(sentence, word, newWord) {
-  var originalSentence = sentence.toLowerCase().split(/ /);
-  var findWord = word
-  var replacementWord = newWord
+var findAndReplace = function(sentence, originalWord, replacementWord) {
+  var originalSentence = sentence.split(" ");
+  var findWord = originalWord
   var newSentence = []
 
   for (var i = 0; i < originalSentence.length; i++){
@@ -11,16 +10,15 @@ var returnedWord = function(sentence, word, newWord) {
     newSentence.push(replacementWord)
     }
   };
-  return newSentence.join(" ")
+    return newSentence.join(" ")
 };
-
 
 $(document).ready(function() {
   $("form#sentence_form").submit(function(event) {
     var sentence = ($("input#sentence").val());
-    var word = ($("input#word").val());
-    var newWord = ($("input#newWord").val());
-    var result = replaceWord(sentence, word, newWord);
+    var originalWord = ($("input#originalWord").val());
+    var replacementWord = ($("input#replacementWord").val());
+    var result = findAndReplace(sentence, originalWord, replacementWord);
 
     $(".result").text(result);
      event.preventDefault();
@@ -48,4 +46,18 @@ $(document).ready(function() {
 //     }
 //   };
 //   return newSentence.join(" ")
+// };
+
+// var returnedWord = function(sentence, word, newWord) {
+//   var originalSentence = sentence.toLowerCase().split(/ /);
+//   var findWord = word
+//   var replacementWord = newWord
+//
+//   for (var i = 0; i < originalSentence.length; i++){
+//     if (originalSentence[i] === findWord){
+//     originalSentence[i] = newWord
+//     }
+//     sentence = originalSentence.join(" ")
+//   };
+//   return sentence
 // };

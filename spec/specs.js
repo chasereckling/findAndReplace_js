@@ -1,9 +1,9 @@
-describe('returnedWord', function(){
-  it('replaces a word in a string with a given word.', function(){
-  expect(returnedWord("the cat in the hat", "hat", "box")).to.eql("the cat in the box");
+describe('findAndReplace', function(){
+  it('replaces a word in a string with a given word', function(){
+  expect(findAndReplace("the cat in the hat", "hat", "box")).to.equal("the cat in the box");
   });
 
-  it('replaces a  uppercase word in a string with a given word ', function(){
-  expect(returnedWord("the cat in the Hat", "hat", "box")).to.eql("the cat in the box");
+  it('replaces a number in a string with a given word', function(){
+  expect(findAndReplace("kittens are number 1", "1", "one")).to.equal("kittens are number one");
   });
 });
