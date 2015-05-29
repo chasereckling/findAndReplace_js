@@ -1,12 +1,12 @@
 var returnedWord = function(sentence, word, newWord) {
-  var originalWord = sentence.split(/ /);
+  var originalSentence = sentence.toLowerCase().split(/ /);
   var findWord = word
   var replacementWord = newWord
   var newSentence = []
 
-  for (var i = 0; i < originalWord.length; i++){
-    if (originalWord[i] != findWord){
-    newSentence.push(originalWord[i])
+  for (var i = 0; i < originalSentence.length; i++){
+    if (originalSentence[i] != findWord){
+    newSentence.push(originalSentence[i])
     } else {
     newSentence.push(replacementWord)
     }
